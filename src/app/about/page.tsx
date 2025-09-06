@@ -341,9 +341,10 @@ export default function About() {
           paddingX="m"
           paddingBottom="xl"
           gap="m"
-          flex={2}
+          flex={0}
           horizontal="end"
         >
+            <div style={{ width: "100%", maxWidth: "100px" }}>
           <ProfileCard
             name={person.name}
             title={person.role}
@@ -355,6 +356,7 @@ export default function About() {
             enableTilt={true}
             enableMobileTilt={false}
           />
+            </div>
         </Column>
       </Row>
     </Column>
