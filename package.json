@@ -21,6 +21,7 @@
     "clsx": "^2.1.1",
     "cookie": "^1.0.2",
     "gray-matter": "^4.0.3",
+    "gsap": "^3.13.0",
     "lint-staged": "^16.1.5",
     "lucide-react": "^0.542.0",
     "meshline": "^3.3.1",
