@@ -14,6 +14,7 @@ import {
 } from "@once-ui-system/core";
 import { baseURL, about, person, social } from "@/resources";
 import TableOfContents from "@/components/about/TableOfContents";
+import ProfileCard from "@/components/ProfileCard";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
 
@@ -331,6 +332,29 @@ export default function About() {
               </Column>
             </>
           )}
+        </Column>
+        <Column
+          position="sticky"
+          top="64"
+          s={{ position: "relative" }}
+          minWidth="50"
+          paddingX="m"
+          paddingBottom="xl"
+          gap="m"
+          flex={2}
+          horizontal="end"
+        >
+          <ProfileCard
+            name={person.name}
+            title={person.role}
+            handle={person.name}
+            status="Online"
+            contactText="Contact Me"
+            avatarUrl={person.avatar}
+            showUserInfo={true}
+            enableTilt={true}
+            enableMobileTilt={false}
+          />
         </Column>
       </Row>
     </Column>
