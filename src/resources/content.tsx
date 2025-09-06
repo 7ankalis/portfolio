@@ -2,20 +2,20 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Logo, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Taha",
+  lastName: "",
+  name: `evilsal`,
+  role: "Engineering Student",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "taha.marouani@etudiant-enit.utm.tn",
+  location: "Africa/Tunis", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["Arabic", "English", "French", "Brainrot"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter: Newsletter = {
   display: true,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  description: <>My may-happen newsletter about cybersecurity and engineering</>,
 };
 
 const social: Social = [
@@ -24,18 +24,20 @@ const social: Social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/7ankalis",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/taha-marouani",
   },
+  /*
   {
     name: "Threads",
     icon: "threads",
     link: "https://www.threads.com/@once_ui",
   },
+  */
   {
     name: "Email",
     icon: "email",
@@ -47,9 +49,10 @@ const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name}'s Portfolio`,
+    title: `${person.name}'s Portfolio`,
+  // title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>Evilsal<br /> Lil Nejmet Ighibou.</>,
   featured: {
     display: true,
     title: (
@@ -65,14 +68,8 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm Selene, a design engineer at{" "}
-      <Logo
-        dark
-        icon="/trademarks/wordmark-dark.svg"
-        style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}
-      />
-      , where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      An engineering student at<br /> <b>National School of Engineering of Tunis</b><br />
+      where I'm using my free will to s/home/salamnkikip classes and be active within Securinets ENIT.
     </>
   ),
 };
@@ -98,9 +95,11 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Taha Marouani or 7ankalis or evilsal or evilsamirloussif or whatever name I'll go by in 
+        CTFs, is an engineering student at the National School of Engineering of
+        Tunis (ENIT). Loves literature, technology, and cybersecurity. A proud co-founder of Securinets ENIT trying 
+        to make the most out of his day. 
+
       </>
     ),
   },
@@ -109,18 +108,28 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Internship at BIAT IT",
+        timeframe: "Juin - Aout 2025",
+        role: "Network Security Intern",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Built a full on-premise and cloud SOC system using Wazuh, TheHive, Cortex, MISP enriched with 
+            custom rules for certain types of local password attacks along with basic and default borind configuration. 
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Implemented a network monitoring system that detected basic to medium incidents and fine-tuned to detect 
+            pivoting and lateral movement attempts.
+            </>,
+          <>
+            Did threat hunts on provided APTs on specific scenarios to build a case on a critical alert.
           </>,
+          <>
+            Performed some forensics to find the traces and arsenal of a recent pentest.
+          </>,
+          <>
+            Collaborated with the IT team to enhance the overall security posture of the organization's network infrastructure.
+          </>,
+          
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
@@ -132,10 +141,11 @@ const about: About = {
           },
         ],
       },
+
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "CTF Author - Organizer",
+        timeframe: "CAT the Flag CTF 1st/2nd edition.",
+        role: "Maintained/Setup the CTF infrastrucutre ",
         achievements: [
           <>
             Developed a design system that unified the brand across multiple platforms, improving
@@ -148,6 +158,7 @@ const about: About = {
         ],
         images: [],
       },
+
     ],
   },
   studies: {
@@ -155,12 +166,14 @@ const about: About = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "National Engineering School of Tunis (ENIT)",
+        description: <>Studied Telecommunications engineering.</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Preparatory Classes for Engineering Schools (IPEIEM)",
+        description: <>Studied Maths, Physics, Python, SQL, Chemistry, Mechanics, Electronics. You name it. 
+        But Mostly, I studied people.
+            Ranked 80/7xx at the final National Exams. </>,
       },
     ],
   },
@@ -169,14 +182,56 @@ const about: About = {
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
+        title: "Networking",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>Built a full virtual SOC home lab.</>
         ),
         tags: [
           {
-            name: "Figma",
-            icon: "figma",
+            name: "Ubuntu",
+            icon: "ubuntu",
+          },
+
+            {
+                name: "Active Directory",
+                icon: "windows",
+            },
+            {
+                name: "Opnsense Firewall",
+                icon: "shield",
+            },
+
+            {
+                name: "ZenArmor NextGen FW",
+                icon: "shield",
+            },
+          {
+            name: "Suricata",
+            icon: "shield",
+          },
+          {
+            name: "IDS",
+            icon: "shield",
+          },
+          {
+            name: "IPS",
+            icon: "shield",
+          },
+          {
+            name: "Wazuh",
+            icon: "",
+          },
+          {
+            name: "TheHive",
+            icon: "",
+          },
+          {
+            name: "MISP",
+            icon: "",
+          },
+          {
+            name: "Cortex",
+            icon: "",
           },
         ],
         // optional: leave the array empty if you don't want to display images
@@ -196,24 +251,33 @@ const about: About = {
         ],
       },
       {
-        title: "Next.js",
+        title: "Pentesting",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>HackTheBox/CTF Player.</>
         ),
         tags: [
           {
-            name: "JavaScript",
-            icon: "javascript",
+            name: "Kali",
+            icon: "kali",
           },
           {
-            name: "Next.js",
-            icon: "nextjs",
+            name: "AD Pentesting",
+            icon: "windows",
           },
           {
-            name: "Supabase",
-            icon: "supabase",
+            name: "Pivoting, Tunneling, Lateral Movement",
+            icon: "route",
           },
-        ],
+            {
+            name: "Privilege Escalation",
+            icon: "arrowUp",
+            },
+            {
+                name: "Enumeration",
+                icon: "lens",
+            },
+
+],
         // optional: leave the array empty if you don't want to display images
         images: [
           {
