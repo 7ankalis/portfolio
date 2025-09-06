@@ -1,5 +1,5 @@
 // Component ported and enhanced from https://codepen.io/JuanFuentes/pen/eYEeoyE
-
+"use client"
 import { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 

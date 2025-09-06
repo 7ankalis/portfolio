@@ -1,13 +1,14 @@
 import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
 import ProfileCard from "@/components/ProfileCard";
+import ASCIIText from '@/components/ASCIIText';
 
 const person: Person = {
     firstName: "Taha",
     lastName: "",
-    name: `evilsal`,
+    name: `Taha`,
     role: "Engineering Student",
-    avatar: "/images/avatar.jpg",
+    avatar: "/images/avatar.png",
     email: "taha.marouani@etudiant-enit.utm.tn",
     location: "Africa/Tunis",
     languages: ["Arabic", "English", "French", "Brainrot"],
@@ -31,7 +32,7 @@ const home: Home = {
     label: "Home",
     title: `${person.name}'s Portfolio`,
     description: `Portfolio website showcasing my work as a ${person.role}`,
-    headline: <>Evilsal<br /> Lil Nejmet Ighibou.</>,
+    headline: <>Taha</>,
     featured: {
         display: true,
         title: (
@@ -48,18 +49,25 @@ const home: Home = {
     subline: (
         <>
             An engineering student at<br /> <b>National School of Engineering of Tunis</b><br />
-            where I'm using my free time to attend classes and be active within Securinets ENIT.
+            where I'm using my free will to skip classes and be active within Securinets ENIT.
+            <ASCIIText
+                text='evilsal'
+                enableWaves={true}
+                asciiFontSize={6}
+                textFontSize={400}
+            />
         </>
+
     ),
 };
 
 const about: About = {
     path: "/about",
     label: "About",
-    title: `About – ${person.name}`,
-    description: `Meet ${person.name}, ${person.role} from ${person.location}`,
-    tableOfContent: { display: true, subItems: false },
-    avatar: { display: true },
+    title: `About – ${'Taha'}`,
+    description: `Meet ${'Taha'}, ${person.role} from ${person.location}`,
+    tableOfContent: { display: true, subItems: true },
+    avatar: { display: false },
     calendar: { display: true, link: "https://cal.com" },
     intro: {
         display: true,

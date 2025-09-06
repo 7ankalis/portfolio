@@ -65,17 +65,19 @@ export default function Home() {
               </Badge>
             </RevealFx>
           )}
-          <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="16">
+          <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="32">
             <Heading wrap="balance" variant="display-strong-l">
               {home.headline}
             </Heading>
           </RevealFx>
-          <RevealFx translateY="8" delay={0.2} fillWidth horizontal="center" paddingBottom="32">
+          <RevealFx translateY="8" delay={0.2} fillWidth horizontal="center" paddingBottom="48">
             <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
               {home.subline}
             </Text>
           </RevealFx>
-          <RevealFx paddingTop="12" delay={0.4} horizontal="center" paddingLeft="12">
+          {/* Add extra space before About button */}
+          <div style={{ marginBottom: 64 }} />
+          <RevealFx paddingTop="24" delay={0.6} horizontal="center" paddingLeft="12">
             <Button
               id="about"
               data-border="rounded"

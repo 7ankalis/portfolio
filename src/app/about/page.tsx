@@ -92,7 +92,7 @@ export default function About() {
             flex={3}
             horizontal="center"
           >
-            <Avatar src={person.avatar} size="xl" />
+              <Avatar src={person.avatar} size="xl" />
             <Row gap="8" vertical="center">
               <Icon onBackground="accent-weak" name="globe" />
               {person.location}
@@ -142,7 +142,7 @@ export default function About() {
               </Row>
             )}
             <Heading className={styles.textAlign} variant="display-strong-xl">
-              {person.name}
+              {'Taha Marouani'}
             </Heading>
             <Text
               className={styles.textAlign}
@@ -344,19 +344,19 @@ export default function About() {
           flex={0}
           horizontal="end"
         >
-            <div style={{ width: "100%", maxWidth: "100px" }}>
-          <ProfileCard
-            name={person.name}
-            title={person.role}
-            handle={person.name}
-            status="Online"
-            contactText="Contact Me"
-            avatarUrl={person.avatar}
-            showUserInfo={true}
-            enableTilt={true}
-            enableMobileTilt={false}
-          />
-            </div>
+          <div style={{ width: "100%", maxWidth: "100px" }}>
+            <ProfileCard
+              name={""}
+              title={""}
+              handle={'evilsal'}
+              status="Online"
+              contactText="Contact Me"
+              avatarUrl={person.avatar}
+              showUserInfo={true}
+              enableTilt={true}
+              enableMobileTilt={false}
+            />
+          </div>
         </Column>
       </Row>
     </Column>
