@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Noise from "@/components/Noise";
+import FuzzyText from "@/components/FuzzyText";
 
 export default function NotFound() {
     return (
@@ -13,7 +14,30 @@ export default function NotFound() {
 
             {/* Foreground content */}
             <div className="z-10 px-6 text-center">
-                <h1 className="text-7xl font-bold drop-shadow-lg">404</h1>
+                {/* Replace static 404 with FuzzyText */}
+                <FuzzyText
+                    baseIntensity={0.8}
+                    hoverIntensity={1.5}  // optional, only if you want hover effect
+                    enableHover={true}    // optional
+                    fontSize="10rem"
+                    fontWeight={900}
+                    color="#fff"
+                >
+                    404
+
+                </FuzzyText>
+                <br/>
+                <FuzzyText
+                baseIntensity={0.8}
+                hoverIntensity={1.5}  // optional, only if you want hover effect
+                enableHover={true}    // optional
+                fontSize="10rem"
+                fontWeight={900}
+                color="#fff">
+                404
+
+            </FuzzyText>
+
                 <p className="mt-4 text-lg text-gray-300">
                     Oops! The page you’re looking for doesn’t exist.
                 </p>

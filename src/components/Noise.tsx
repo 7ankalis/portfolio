@@ -2,7 +2,7 @@
 
 import type React from "react";
 import { useRef, useEffect } from "react";
-import "./Noise.css";
+import "@/components/Noise.css";
 
 interface NoiseProps {
     patternAlpha?: number;

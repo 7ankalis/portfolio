@@ -15,6 +15,7 @@ import {
 } from "@once-ui-system/core";
 import { Footer, Header, RouteGuard, Providers } from "@/components";
 import { baseURL, effects, fonts, style, dataStyle, home } from "@/resources";
+import Noise from "@/components/Noise";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -25,6 +26,8 @@ export async function generateMetadata() {
     image: home.image,
   });
 }
+
+
 
 export default async function RootLayout({
   children,
@@ -108,11 +111,12 @@ export default async function RootLayout({
           as="body"
           background="page"
           fillWidth
-          style={{ minHeight: "100vh" }}
+          style={{ minHeight: "100vh", position: "relative", overflow: "hidden" }}
           margin="0"
           padding="0"
           horizontal="center"
         >
+          <Noise patternAlpha={15} patternRefreshInterval={2} />
           <RevealFx fill position="absolute">
             <Background
               mask={{
