@@ -1,6 +1,5 @@
 "use client";
 //Testing
-
 import { useRef } from "react";
 import Link from "next/link";
 import Noise from "@/components/Noise";
