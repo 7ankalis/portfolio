@@ -17,8 +17,9 @@ import TableOfContents from "@/components/about/TableOfContents";
 import ProfileCard from "@/components/ProfileCard";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
+import {Metadata} from "next";
 
-export async function generateMetadata() {
+export async function generateMetadata(): Promise<Metadata> {
   return Meta.generate({
     title: about.title,
     description: about.description,
