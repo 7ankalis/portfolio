@@ -32,7 +32,7 @@ const home: Home = {
     label: "Home",
     title: `${person.name}'s Portfolio`,
     description: `Portfolio website showcasing my work as a ${person.role}`,
-    headline: <>Taha</>,
+    headline: <>Taha Marouani</>,
     featured: {
         display: true,
         title: (
@@ -51,7 +51,7 @@ const home: Home = {
             An engineering student at<br /> <b>National School of Engineering of Tunis</b><br />
             where I'm using my free will to skip classes and be active within Securinets ENIT.
             <ASCIIText
-                text='evilsal'
+                text='7ankalis'
                 enableWaves={true}
                 asciiFontSize={6}
                 textFontSize={400}
