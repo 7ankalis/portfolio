@@ -233,14 +233,14 @@ export {
 
 
 const style = {
-    theme: "dark",
-    brand: "orange",
-    accent: "green",
-    neutral: "sand",
-    border: "playful",
-    solid: "contrast",
-    solidStyle: "flat",
-    surface: "filled",
-    transition: "all",
-    scaling: undefined
+    theme:       'dark',         // dark | light
+    neutral:     'gray',         // sand | gray | slate
+    brand:       'blue',         // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
+    accent:      'indigo',       // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
+    solid:       'contrast',     // color | contrast
+    solidStyle:  'flat',         // flat | plastic
+    border:      'playful',      // rounded | playful | conservative
+    surface:     'translucent',  // filled | translucent
+    transition:  'all',          // all | micro | macro
+    scaling:     '100',          // 90 | 95 | 100 | 105 | 110
 }
