@@ -54,7 +54,7 @@ const home: Home = {
                 text='7ankalis'
                 enableWaves={true}
                 asciiFontSize={12}
-                textFontSize={120}
+                textFontSize={80}
                 planeBaseHeight={20}
             />
         </>

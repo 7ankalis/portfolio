@@ -20,7 +20,7 @@ export default function NotFound() {
 
                 <p className="mt-2 text-2xl text-gray-300 font-medium">
                     Oops! The page you’re looking for doesn’t exist. <br />
-                    I'd say practice your shooting down below.
+                    I'd say Hover over the 404 to see the magic.
                 </p>
 
                 <Link
