@@ -32,7 +32,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
         border={style.border as BorderStyle}
         surface={style.surface as SurfaceStyle}
         transition={style.transition as TransitionStyle}
-        scaling={style.scaling as ScalingSize}
+        scaling={style.scaling as unknown as ScalingSize}
       >
         <DataThemeProvider
           variant={dataStyle.variant as ChartVariant}

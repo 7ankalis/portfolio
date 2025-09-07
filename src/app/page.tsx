@@ -15,8 +15,9 @@ import { home, about, person, baseURL, routes } from "@/resources";
 import { Mailchimp } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
+import {Metadata} from "next";
 
-export async function generateMetadata() {
+export async function generateMetadata(): Promise<Metadata> {
   return Meta.generate({
     title: home.title,
     description: home.description,

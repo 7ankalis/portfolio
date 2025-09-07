@@ -337,7 +337,7 @@ export default function About() {
           position="sticky"
           top="64"
           s={{ position: "relative" }}
-          minWidth="50"
+          //minWidth="50"
           paddingX="m"
           paddingBottom="xl"
           gap="m"

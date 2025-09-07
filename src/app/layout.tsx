@@ -16,8 +16,9 @@ import {
 import { Footer, Header, RouteGuard, Providers } from "@/components";
 import { baseURL, effects, fonts, style, dataStyle, home } from "@/resources";
 import Noise from "@/components/Noise";
+import {Metadata} from "next";
 
-export async function generateMetadata() {
+export async function generateMetadata(): Promise<Metadata> {
   return Meta.generate({
     title: home.title,
     description: home.description,

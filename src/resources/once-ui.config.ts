@@ -242,4 +242,5 @@ const style = {
     solidStyle: "flat",
     surface: "translucent",
     transition: "all",
+    scaling: undefined
 }
