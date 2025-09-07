@@ -37,6 +37,45 @@ const protectedRoutes: ProtectedRoutesConfig = {
 };
 
 // Import and set font for each variant
+
+import { Orbitron, Inter, Share_Tech_Mono } from "next/font/google";
+
+const heading = Orbitron({
+    variable: "--font-heading",
+    subsets: ["latin"],
+    display: "swap",
+});
+
+const body = Inter({
+    variable: "--font-body",
+    subsets: ["latin"],
+    display: "swap",
+});
+
+const label = Orbitron({
+    variable: "--font-label",
+    subsets: ["latin"],
+    display: "swap",
+    weight: ["400", "700"],
+});
+
+const code = Share_Tech_Mono({
+    weight: "400",
+    variable: "--font-code",
+    subsets: ["latin"],
+    display: "swap"
+});
+
+const fonts: FontsConfig = {
+    heading: heading,
+    body: body,
+    label: label,
+    code: code,
+};
+
+
+/*
+
 import { Geist } from "next/font/google";
 import { Geist_Mono } from "next/font/google";
 
@@ -63,13 +102,10 @@ const code = Geist_Mono({
   subsets: ["latin"],
   display: "swap",
 });
+*/
 
-const fonts: FontsConfig = {
-  heading: heading,
-  body: body,
-  label: label,
-  code: code,
-};
+
+
 
 // default customization applied to the HTML in the main layout.tsx
 /*const style: StyleConfig = {
