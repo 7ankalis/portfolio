@@ -5,8 +5,8 @@ import ASCIIText from '@/components/ASCIIText';
 
 const person: Person = {
     firstName: "Taha",
-    lastName: "",
-    name: `Taha`,
+    lastName: "Marouani",
+    name: `evilsal`,
     role: "Engineering Student",
     avatar: "/images/avatar.png",
     email: "taha.marouani@etudiant-enit.utm.tn",
@@ -53,8 +53,9 @@ const home: Home = {
             <ASCIIText
                 text='7ankalis'
                 enableWaves={true}
-                asciiFontSize={6}
-                textFontSize={400}
+                asciiFontSize={12}
+                textFontSize={200}
+                planeBaseHeight={20}
             />
         </>
 
