@@ -9,7 +9,7 @@ import {
   SameAsConfig,
   SchemaConfig,
   SocialSharingConfig,
-  StyleConfig,
+
 } from "@/types";
 import { home } from "./index";
 
@@ -242,4 +242,5 @@ const style = {
     solidStyle: "flat",
     surface: "translucent",
     transition: "all",
+    scaling: undefined
 }

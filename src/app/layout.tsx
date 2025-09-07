@@ -16,8 +16,10 @@ import {
 import { Footer, Header, RouteGuard, Providers } from "@/components";
 import { baseURL, effects, fonts, style, dataStyle, home } from "@/resources";
 import Noise from "@/components/Noise";
+import {Metadata} from "next";
+import React from "react";
 
-export async function generateMetadata() {
+export async function generateMetadata(): Promise<Metadata> {
   return Meta.generate({
     title: home.title,
     description: home.description,
@@ -105,11 +107,12 @@ export default async function RootLayout({
             `,
           }}
         />
+          <title></title>
       </head>
       <Providers>
         <Column
           as="body"
-          background="page"
+          background={"page"}
           fillWidth
           style={{ minHeight: "100vh", position: "relative", overflow: "hidden" }}
           margin="0"

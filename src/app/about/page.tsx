@@ -17,8 +17,9 @@ import TableOfContents from "@/components/about/TableOfContents";
 import ProfileCard from "@/components/ProfileCard";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
+import {Metadata} from "next";
 
-export async function generateMetadata() {
+export async function generateMetadata(): Promise<Metadata> {
   return Meta.generate({
     title: about.title,
     description: about.description,
@@ -120,7 +121,7 @@ export default function About() {
               <Row
                 fitWidth
                 border="brand-alpha-medium"
-                background="brand-alpha-weak"
+                background={"brand-alpha-weak"}
                 radius="full"
                 padding="4"
                 gap="8"
@@ -337,7 +338,7 @@ export default function About() {
           position="sticky"
           top="64"
           s={{ position: "relative" }}
-          minWidth="50"
+          //minWidth="50"
           paddingX="m"
           paddingBottom="xl"
           gap="m"

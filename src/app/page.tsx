@@ -15,8 +15,9 @@ import { home, about, person, baseURL, routes } from "@/resources";
 import { Mailchimp } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
+import {Metadata} from "next";
 
-export async function generateMetadata() {
+export async function generateMetadata(): Promise<Metadata> {
   return Meta.generate({
     title: home.title,
     description: home.description,
@@ -53,8 +54,8 @@ export default function Home() {
               paddingLeft="12"
             >
               <Badge
-                background="brand-alpha-weak"
-                paddingX="12"
+                background={"brand-alpha-weak"}
+                paddingX={"12"}
                 paddingY="4"
                 onBackground="neutral-strong"
                 textVariant="label-default-s"
