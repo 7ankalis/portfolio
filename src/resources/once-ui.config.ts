@@ -240,7 +240,6 @@ const style = {
     border: "playful",
     solid: "contrast",
     solidStyle: "flat",
-    surface: "translucent",
+    surface: "filled",
     transition: "all",
-    scaling: undefined
 }
