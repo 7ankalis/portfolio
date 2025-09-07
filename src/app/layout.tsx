@@ -110,15 +110,16 @@ export default async function RootLayout({
           <title></title>
       </head>
       <Providers>
-        <Column
-          as="body"
-          background={"page"}
-          fillWidth
-          style={{ minHeight: "100vh", position: "relative", overflow: "hidden" }}
-          margin="0"
-          padding="0"
-          horizontal="center"
-        >
+          <Column
+              as="body"
+              background={"page"}
+              fillWidth
+              style={{ minHeight: "100vh", position: "relative", overflowX: "hidden", overflowY: "auto" }}
+              margin="0"
+              padding="0"
+              horizontal="center"
+          >
+
           <Noise patternAlpha={15} patternRefreshInterval={2} />
           <RevealFx fill position="absolute">
             <Background
