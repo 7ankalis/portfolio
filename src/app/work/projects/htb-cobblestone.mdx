@@ -6,9 +6,9 @@ images:
 - "/images/htb/htb-cobble-preview.png"
 team:
 - name: "Taha Marouani"
-  role: "Author"
-  avatar: "/images/avatar.png"
-  linkedIn: "https://www.linkedin.com/in/taha-marouani/"
+role: "Author"
+avatar: "/images/avatar.png"
+linkedIn: "https://www.linkedin.com/in/taha-marouani/"
 ---
 
 ## TL;DR
@@ -44,7 +44,11 @@ y00s+EbTzIMq4Cv/mOkGWCD8xewIgvZ4zDI5pPhUaVYNsPaUmYzXgi0DzCy6s//8a1YFcyH398Nc=
 |_http-title: Cobblestone - Official Website
 Service Info: Host: 127.0.0.1; OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
-> **Warning:** A UDP and full ports TCP scan showed some services running, but nothing useful now.
+<Feedback
+    variant="warning"
+    title="Warning"
+    description="A UDP and full ports TCP scan showed some services running, but nothing useful now."
+/>
 
 ### Subdomains
 
@@ -116,9 +120,14 @@ sqlmap -r request.txt -p url --dbs --batch
 
 ![sqlmap1](/images/htb/htb-cobble-10.png)
 
-> **Warning:** Note that `request.txt` is the request intercepted from burpsuite while voting for a website.
+<Feedback
+    variant="warning"
+    title="Warning"
+    description="Note that `request.txt` is the request intercepted from burpsuite while voting for a website."
+/>
 
-```http // request.txt
+
+```request.txt
 POST /suggest.php HTTP/1.1
 Host: vote.cobblestone.htb
 Content-Length: 23
@@ -154,10 +163,22 @@ Poking around the databse, we can dump this:
 Note that `evil@sal.htb` was my account, so this databse is useless for now, it's not of internal shit.
 We won't attempt to crack the admin's password, it may even be an account created by another player, not the actual DB admin.
 
-> **Danger:** This was my greatest mistake. What you've just read is me on my way to waste hours trying to get a reverse shell. Which was successful at the end, but literally useless because the objective was to crack the `cobble` user hash and SSH into it.
+
+<Feedback
+    variant="danger"
+    title="Mistake"
+    description="This was my greatest mistake. What you've just read is me on my way to waste hours trying to get a reverse shell. Which was successful at the end, but literally useless because the objective was to crack the `cobble` user hash and SSH into it.
+"
+/>
 
 Using crackstation, few seconds and we got the user `cobble` and the user flag.
-> **Tip:** User Flag captured!
+
+<Feedback
+    variant="success"
+    title="Mistake"
+    description="User Flag captured!"
+/>
+
 
 ## Pre-User Time-Wasting
 >These are some of what I did to gain a rev shell back to my machine. Switching the vpns, UDP to TCP...etc but banging my head against the wall aren't included.
@@ -212,12 +233,29 @@ ss -tulnp
 
 And we have a service at port `TCP/25115`. This was cobbler's used port. Check out what is the [Cobbler](https://cobbler.github.io/) service.
 
-> **Tip:** Cobbler is a Linux provisioning and deployment server designed to simplify the setup of network-based installations. It allows administrators to automatically install operating systems, manage system profiles, and configure network boot environments (PXE) across many machines. Key features include:
-> - OS provisioning: Automates the installation of Linux distributions on bare-metal or virtual machines.
-> - Profile management: Defines templates for system configurations, including packages, scripts, and network settings.
-> - PXE boot integration: Supports network booting for unattended installations.
-> - Template and scripting support: Uses templates (Cheetah) for scripts and configuration files to customize installations.
-> - Essentially, Cobbler streamlines large-scale deployments, making it easier to manage multiple systems consistently and automatically.
+
+<Feedback
+    title="What is Cobbler?"
+    variant="info"
+    description={
+        <>
+            <p>
+                Cobbler is a Linux provisioning and deployment server designed to simplify the setup of network-based installations. It allows administrators to automatically install operating systems, manage system profiles, and configure network boot environments (PXE) across many machines.
+            </p>
+            <p>Key features include:</p>
+            <ul>
+                <li><strong>OS provisioning:</strong> Automates the installation of Linux distributions on bare-metal or virtual machines.</li>
+                <li><strong>Profile management:</strong> Defines templates for system configurations, including packages, scripts, and network settings.</li>
+                <li><strong>PXE boot integration:</strong> Supports network booting for unattended installations.</li>
+                <li><strong>Template and scripting support:</strong> Uses templates (Cheetah) for scripts and configuration files to customize installations.</li>
+                <li>Essentially, Cobbler streamlines large-scale deployments, making it easier to manage multiple systems consistently and automatically.</li>
+            </ul>
+        </>
+    }
+/>
+
+
+> **Tip:**
 
 So to see what's being hosted in that port, we port forward it using:
 ```bash
@@ -227,7 +265,17 @@ ssh -L 25115:localhost:25115 cobbler@cobblestone.htb
 Reading what's on [this](https://tnpitsecurity.com/blog/cobbler-multiple-vulnerabilities/) page, leads to the direct solution.
 
 Here is what we're going to do:
-> **Tip:** The privilege escalation relied on a critical vulnerability in Cobbler (≤ 3.2.1), which exposes an XML-RPC API for managing profiles, systems, and templates. The vulnerability arises because Cobbler’s generate_script method renders templates using Cheetah without proper input sanitization. This allows an attacker to perform a template injection, executing arbitrary Python code as the user running Cobbler (typically root). By crafting a malicious template and forcing Cobbler to render it—either through profile or system manipulation—the attacker could execute commands with root privileges, effectively taking full control of the system.
+
+<Feedback
+    variant="success"
+    title="Vector"
+    description="The privilege escalation relied on a critical vulnerability in Cobbler (≤ 3.2.1), which exposes an XML-RPC API for
+managing profiles, systems, and templates. The vulnerability arises because Cobbler’s generate_script method renders templates using
+Cheetah without proper input sanitization. This allows an attacker to perform a template injection, executing arbitrary
+Python code as the user running Cobbler (typically root). By crafting a malicious template and forcing Cobbler to render
+it—either through profile or system manipulation—the attacker could execute commands with root privileges, effectively taking full
+control of the system."
+/>
 
 ```python
 import xmlrpc.client
@@ -321,4 +369,10 @@ Sends a POST request to Cobbler’s XML-RPC endpoint to call `get_template_file_
 This combination allows reading arbitrary files or
 potentially executing code because Cobbler renders templates as root, exploiting the template injection vulnerability.
 
-> **Tip:** Rooted!
+
+
+<Feedback
+    variant="success"
+    title="Success"
+    description="Rooted!"
+/>
